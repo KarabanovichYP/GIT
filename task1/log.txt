@@ -1,0 +1,27 @@
+commit 3edb137414eec874f5507c42ad7399e1cb1c7477 (HEAD -> master)
+Author: Egor Karabanovich <karabanovich333@gmail.com>
+Date:   Tue Feb 6 15:45:54 2018 +0300
+
+    Revert "Revert "add status.txt""
+
+    This reverts commit eb20e74c7a8fe199a84d85c628a98f866322b989.
+
+commit eb20e74c7a8fe199a84d85c628a98f866322b989
+Author: Egor Karabanovich <karabanovich333@gmail.com>
+Date:   Tue Feb 6 15:38:44 2018 +0300
+
+    Revert "add status.txt"
+
+    This reverts commit 2d388e3dd698f02fe1d919b9fc9f3bef7290fb43.
+
+commit 2d388e3dd698f02fe1d919b9fc9f3bef7290fb43
+Author: Egor Karabanovich <karabanovich333@gmail.com>
+Date:   Tue Feb 6 15:34:43 2018 +0300
+
+    add status.txt
+
+commit 3e8e87157c10b74da26c13b5dee699aeebc26de4
+Author: Egor Karabanovich <karabanovich333@gmail.com>
+Date:   Tue Feb 6 15:34:13 2018 +0300
+
+    add .gitignore
