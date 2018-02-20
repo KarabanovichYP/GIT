@@ -1,0 +1,152 @@
+*{
+    outline:none;
+}
+html,
+body,
+.App {
+    height: 100%;
+}
+body{
+    margin: 0;
+    overflow: hidden;
+}
+p{
+    margin: 0;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    flex: 0 0 auto;
+    padding: 10px;
+    background: #111;
+    display: flex;
+    justify-content: space-around;
+
+}
+.main{
+    background: #f4f4f4;
+    flex: 1 1 auto;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: space-around;
+
+}
+.sign{
+    display: flex;
+    flex-direction: column;
+}
+.material-icons{
+    font-size: 100px;
+}
+.roman{
+    font-family:Georgia, Times, "Times New Roman", serif;
+}
+.helv{
+    font-family:Arial, Helvetica, sans-serif;
+}
+.username{
+    font-size: 15pt;
+}
+.signb{
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: black;
+    border: 1px solid ;
+}
+
+.filters{
+    height: 300px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.filter{
+    display: flex;
+    margin: 2px;
+    margin-left: 0;
+}
+
+.check {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+.check:checked {
+    background-color: #111;
+}
+input:focus{
+    color: #ff0000;
+}
+input[type="text"]{
+    border-radius: 5px;
+    background-color: inherit;
+    color: black;
+    border: 1px solid rgb(187, 197, 188);
+}
+.posts{
+    margin-right: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-top: 10px;
+    border: 1px solid;
+    padding: 10px;
+}
+.bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    font-size: 13px;
+}
+.description{
+    max-width: 100%;
+}
+.hashtags{
+    max-width: 100%;
+    color: #1fc682;
+}
+.footer{
+    flex:  0 0 auto;
+    padding: 10px;
+    background: inherit;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgb(0, 0, 0);
+}
+
+.refresh{
+    color: #8a8a8a
+}
+.refresh:hover{
+    color: black;
+}
+.cur{
+    cursor: pointer;
+}
+
