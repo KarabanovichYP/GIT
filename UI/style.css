@@ -8,18 +8,18 @@ body,
 }
 body{
     margin: 0;
-    overflow: hidden;
 }
 p{
     margin: 0;
 }
 .App{
-    display: flex;
-    flex-direction: column;
+   
 }
 .header{
-
-    flex: 0 0 auto;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: 10px;
     background: #111;
     display: flex;
@@ -28,9 +28,7 @@ p{
 }
 .main{
     background: #f4f4f4;
-    flex: 1 1 auto;
-    position: relative;
-    overflow-y: auto;
+    margin-top: 62px;
     display: flex;
     flex-direction: column;
 }
@@ -177,7 +175,7 @@ img{
         height: 75px;
         top: 60px;
         border-bottom-left-radius: 15px; 
-       
+        border-bottom-right-radius: 15px; 
 
     } 
     input,input[type="text"]{
