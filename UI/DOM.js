@@ -26,8 +26,8 @@ const Dom = (function () {
           f = true;
       });
     }
-    if(f){
-      icons.innerHTML +=`
+    if (f) {
+      icons.innerHTML += `
       <i class="material-icons cur like" style="">favorite</i>
       `
     }
@@ -40,7 +40,7 @@ const Dom = (function () {
         <i class="material-icons cur ic">create</i>
         <i class="material-icons cur ic">delete_forever</i>
       `;
-   
+
     bottom.appendChild(icons);
     let date = document.createElement('div');
     date.className = 'date';
@@ -91,6 +91,9 @@ const Dom = (function () {
         posts.appendChild(makePost(el));
       });
     },
+    addPhotoPost: function (photoPost) {
+      posts.insertBefore(makePost(photoPost),posts.firstChild);
+    },
     removePhotoPost: function (id) {
       if (document.getElementById(id))
         posts.removeChild(document.getElementById(id));
@@ -136,10 +139,15 @@ function displayPhotoPosts(skip, top, filterConfig) {
 }
 function addPhotoPost(photoPost) {
   if (Posts.addPhotoPost(photoPost)) {
-    let posts = document.querySelector(".posts");
-    while (posts.firstChild)
-      posts.removeChild(posts.firstChild);
-    displayPhotoPosts();
+    if (Posts.getPhotoPosts()[0].id === photoPost.id) {
+      Dom.addPhotoPost(photoPost);
+    }
+    else {
+      let posts = document.querySelector(".posts");
+      while (posts.firstChild)
+        posts.removeChild(posts.firstChild);
+      displayPhotoPosts();
+    }
   }
 }
 function removePhotoPost(id) {
@@ -152,11 +160,16 @@ function editPhotoPost(id, photoPost) {
     Dom.editPhotoPost(id, photoPost);
   }
 }
-
+function newUser(Username){
+  Dom.newUser(Username);
+  let posts = document.querySelector(".posts");
+  while (posts.firstChild)
+    posts.removeChild(posts.firstChild);
+  displayPhotoPosts(0, 5);
+}
 var Username = 'Иванов Илья';
-Dom.newUser(Username);
-displayPhotoPosts(0, 5);
-displayPhotoPosts(5, 10);
+newUser(Username);
+
 /*
 var post1 = {
   id: '12',
