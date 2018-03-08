@@ -1,6 +1,9 @@
 *{
     outline:none;
 }
+html,body,.App,.main{
+    width: 100%;
+}
 html,
 body,
 .App {
@@ -29,16 +32,33 @@ p{
     margin-top: 62px;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .content{
     flex: 1 0 auto;
     display: flex;
     justify-content: center;
-
+    background: inherit;
+}
+.content_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: inherit;
 }
 .sign{
     display: flex;
     flex-direction: column;
+}
+.ph{
+    color:#f4f4f4 ;
+    text-align:center;
+}
+.fl{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .material-icons{
     font-size: 100px;
@@ -52,11 +72,15 @@ p{
 .username{
     font-size: 15pt;
 }
+#Username{
+    text-align: center;
+}
 .signb{
     border-radius: 5px;
     background-color: #f4f4f4;
     color: black;
     border: 1px solid ;
+    min-width: 70px;
 }
 
 .filters{
@@ -120,11 +144,22 @@ input[type="text"]{
     align-items:center;
     font-size: 13px;
 }
-.description{
-    max-width: 100%;
+.icons{
+    display: flex;
+    align-items: center;
+}
+.likes{
+    font-size: 10pt;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.568);
+}
+.like{
+    font-size: 25px;color:red;
+}
+.ic{
+    font-size: 25px;
 }
 .hashtags{
-    max-width: 100%;
     color: #1fc682;
 }
 .footer{
@@ -146,19 +181,19 @@ input[type="text"]{
 .cur{
     cursor: pointer;
 }
-img{
+img,.post{
     width:450px;
 }
 @media screen and (max-width: 480px) { 
-    .filters{
-        
-  } 
-    img{
+    img,.post{
         width: 270px;
     }
     .footer{
         flex-direction: column;
         align-items: center;
+    }
+    .heart{
+        flex: 0;
     }
 }
 @media screen and (max-width: 990px) { 
@@ -179,7 +214,7 @@ img{
     input,input[type="text"]{
         background: white;
     }
-    .posts{
+    .content_div{
         margin-top: 75px;
     }
 }

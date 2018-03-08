@@ -4,21 +4,28 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <link href="style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <script src="PhotoPosts.js"></script>
   <script src="Tests.js"></script>
+  <script src="DOM.js" defer></script>
   <title>Inlike</title>
 </head>
 
 <body>
   <div class="App">
     <div class="header">
-      <i class="material-icons cur" style="color:#f4f4f4 ;font-size: 39px;width:91px;text-align:center">add_a_photo</i>
-      <div class="material-icons " style="color:red ;font-size: 40px ">favorite</div>
-      <div class="sign">
-        <div class="username roman" style="color:#f4f4f4">Username</div>
-        <button class="signb cur">Sign out</button>
+      <div class="fl">
+        <i class="cur ph material-icons " style="font-size:39px;">add_a_photo</i>
+      </div>
+      <div class="fl heart">
+        <div class="material-icons" style="color:red ;font-size: 40px ">favorite</div>
+      </div>
+      <div class="fl">
+        <div class="sign">
+          <div class="username roman" id="Username" style="color:#f4f4f4">Username</div>
+          <button class="signb cur">Sign out</button>
+        </div>
       </div>
     </div>
     <div class="main">
@@ -38,78 +45,11 @@
             <input type="text" placeholder="#hashtag">
           </div>
         </div>
-
-        <div class="posts">
-          <div class="post">
-            <div class="username roman">Username</div>
-            <div class="img">
-              <img  src="kosmos.jpg" alt="Username avatar" />
-            </div>
-            <div class="bottom">
-              <div class="icons">
-                <i class="material-icons cur like" style="font-size: 25px">favorite_border</i>
-                <i class="material-icons cur" style="font-size: 25px">create</i>
-                <i class="material-icons cur" style="font-size: 25px">delete_forever</i>
-              </div>
-              <div class="date">
-                <div>15:12</div>
-                <div>18.12.2017</div>
-              </div>
-            </div>
-            <div class="description">
-              Descrioption..........
-            </div>
-            <div class="hashtags">
-              #photo#inlike#me
-            </div>
+        <div class="content_div">
+          <div class="posts"></div>
+          <div class="refresh">
+            <i class="material-icons refresh cur" style="font-size: 39px">refresh</i>
           </div>
-          <div class="post">
-            <div class="username roman">Username</div>
-            <div class="img">
-              <img  src="kosmos.jpg" alt="Username avatar" />
-            </div>
-            <div class="bottom">
-              <div class="icons">
-                <i class="material-icons cur like" style="font-size: 25px">favorite_border</i>
-                <i class="material-icons cur" style="font-size: 25px">create</i>
-                <i class="material-icons cur" style="font-size: 25px">delete_forever</i>
-              </div>
-              <div class="date">
-                <div>15:12</div>
-                <div>18.12.2017</div>
-              </div>
-            </div>
-            <div class="description">
-              Descrioption..........
-            </div>
-            <div class="hashtags">
-              #photo#inlike#me
-            </div>
-          </div>
-          <div class="post">
-            <div class="username roman">Username</div>
-            <div class="img">
-              <img  src="kosmos.jpg" alt="Username avatar" />
-            </div>
-            <div class="bottom">
-              <div class="icons">
-                <i class="material-icons cur like" style="font-size: 25px">favorite_border</i>
-                <i class="material-icons cur" style="font-size: 25px">create</i>
-                <i class="material-icons cur" style="font-size: 25px">delete_forever</i>
-              </div>
-              <div class="date">
-                <div>15:12</div>
-                <div>18.12.2017</div>
-              </div>
-            </div>
-            <div class="description">
-              Descrioption..........
-            </div>
-            <div class="hashtags">
-              #photo#inlike#me
-            </div>
-          </div>
-          <i class="material-icons refresh cur" style="font-size: 39px">refresh</i>
         </div>
       </div>
       <div class="footer roman">

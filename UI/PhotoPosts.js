@@ -7,7 +7,7 @@ const Posts = (function () {
       author: 'Иванов Иван',
       photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
       hashTags: ['ура', 'победа'],
-      likes: ['Иван Петров', 'Юра Иванов']
+      likes: ['Иванов Илья','Иван Петров', 'Юра Иванов']
     },
     {
       id: '2',
@@ -16,15 +16,15 @@ const Posts = (function () {
       author: 'Иванов Илья',
       photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
       hashTags: ['new', 'house'],
-      likes: ['Иванов Иван', 'Юра Иванов']
+      likes: ['Иванов Илья','Иванов Иван', 'Юра Иванов']
     },
     {
       id: '3',
-      description: 'My dog',
+      description: 'My team',
       createdAt: new Date('2018-02-20T23:00:00'),
       author: 'Иванов Иван',
       photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-      hashTags: ['dog'],
+      hashTags: ['team'],
       likes: ['Иванов Иван', 'Юра Иванов']
     },
     {
@@ -70,7 +70,7 @@ const Posts = (function () {
       author: 'Иванов Иван',
       photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
       hashTags: ['new', 'home'],
-      likes: ['Иванов Иван', 'Юра Иванов']
+      likes: ['Иванов Илья','Иванов Иван', 'Юра Иванов']
     },
     {
       id: '9',
@@ -79,7 +79,7 @@ const Posts = (function () {
       author: 'Иванов Иван',
       photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
       hashTags: ['new', 'home'],
-      likes: ['Иванов Иван', 'Юра Иванов']
+      likes: ['Иванов Илья','Иванов Иван', 'Юра Иванов']
     },
     {
       id: '10',
@@ -91,6 +91,9 @@ const Posts = (function () {
       likes: ['Иванов Иван', 'Юра Иванов']
     }
   ];
+  photoPosts.sort((a, b) => {
+    return b.createdAt - a.createdAt;
+  });
   return {
     getPhotoPosts: function (skip = 0, top = 10, filterConfig) {
       return photoPosts
@@ -132,8 +135,8 @@ const Posts = (function () {
     addPhotoPost: function (photoPost) {
       if (this.validatePhotoPost(photoPost) && !this.getPhotoPost(photoPost.id)) {
         photoPosts.push(photoPost);
-        photoPosts.sort((elem, b) => {
-          return elem.createdAt - b.createdAt;
+        photoPosts.sort((a, b) => {
+          return b.createdAt - a.createdAt;
         });
         return true;
       }
