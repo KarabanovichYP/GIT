@@ -1,0 +1,397 @@
+*{
+    -o-user-select: none;
+    user-select: none;
+    outline:none;
+}
+html,body,.App,.main{
+    width: 100%;
+}
+
+html,
+body,
+.App {
+    height: 100%;
+    position: absolute;
+}
+body{
+    margin: 0;
+}
+p{
+    margin: 0;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #111;
+    display: flex;
+    justify-content: space-around;
+
+}
+.main{
+    background: #f4f4f4;
+    margin-top: 62px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 62px);
+}
+.content{
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    background: inherit;
+}
+.content_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: inherit;
+}
+.sign{
+    display: flex;
+    flex-direction: column;
+}
+.ph{
+    color:#f4f4f4 ;
+    text-align:center;
+}
+.ph:hover{
+    color:#e4e1e1 ;
+}
+.fl{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.material-icons{
+    font-size: 100px;
+}
+.roman{
+    font-family:Georgia, Times, "Times New Roman", serif;
+}
+.helv{
+    font-family:Arial, Helvetica, sans-serif;
+}
+.username{
+    font-size: 15pt;
+}
+#Username{
+    text-align: center;
+}
+.signb{
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: black;
+    border: 1px solid ;
+    min-width: 70px;
+}
+.signb:hover{
+    background-color: #e4e1e1;
+}
+
+.filters{
+    position: fixed;
+    left: 7%;
+    top: 72.4px;
+    height: 100px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.filter{
+    display: flex;
+    margin: 2px;
+    margin-left: 0;
+}
+
+.check {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+.check:checked {
+    background-color: #111;
+}
+input[type="text"]{
+    width: 100%;
+    border-radius: 5px;
+    background-color: inherit;
+    color: black;
+    border: 1px solid rgb(187, 197, 188);
+}
+.posts{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-top: 10px;
+    border: 1px solid;
+    padding: 10px;
+}
+.bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    font-size: 13px;
+}
+.icons{
+    display: flex;
+    align-items: center;
+}
+.likes{
+    font-size: 10pt;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.568);
+}
+.likes_word{
+    display: flex;
+}
+.fav{
+    font-size: 25px;color:red;
+}
+.ic{
+    font-size: 25px;
+}
+.hashtags{
+    color: #1fc682;
+}
+.footer{
+    flex:  0 0 auto;
+    padding: 10px;
+    background: inherit;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgb(0, 0, 0);
+}
+
+.refresh{
+    color: #8a8a8a
+}
+.refresh:hover{
+    color: black;
+}
+.cur{
+    cursor: pointer;
+}
+img,.post{
+    width:450px;
+}
+@media screen and (max-width: 480px) { 
+    img,.post{
+        width: 270px;
+    }
+    .footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .heart{
+        flex: 0;
+    }
+}
+@media screen and (max-width: 990px) { 
+    .flt{
+        display: none;
+    }
+    .filters{
+        align-items: center;
+        width: 100%;
+        left: 0;
+        background: #111;
+        height: 75px;
+        top: 60px;
+        border-bottom-left-radius: 15px; 
+        border-bottom-right-radius: 15px; 
+
+    } 
+    input,input[type="text"]{
+        background: white;
+    }
+    .content_div{
+        margin-top: 75px;
+    }
+}
+
+.sign_heart{
+    color:red ;font-size: 40px 
+}
+.sign_text{
+    font-size: 18pt;
+}
+.sign_form{
+    width:230px;
+    margin-top: 15px;
+    background: white;
+    border: solid 1.5px #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sign_form_text{
+    font-size: 12pt;
+    margin-top: 20px;
+}
+.sign_input{
+    background: #f4f4f4;
+    margin-top: 7px;
+    height: 30px;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 11pt;
+}
+.sign_button_div{
+    text-align: center;
+}
+.sign_button{
+    font-size: 12pt;
+    margin-top: 20px;
+    width: 170px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: #1fc682;
+    cursor: pointer;
+}
+.sign_button:hover{
+    background: #36b280;
+}
+.sign_button:active{
+    background: #1a885c;
+}
+.sign_pg{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sign_wrong{
+    color: red;
+    margin-top: 3px;
+}
+.sign_mainPg{
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 10pt;
+}
+.like{
+    display: flex;
+}
+.create_div{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.photo_place{
+    height: 350px;
+    width: 530px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:#e9e9e9;
+    border: 2px dashed ;
+    margin-bottom: 15px;
+    position: relative;
+}
+.hidden_input {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: inherit;
+    opacity: 0;
+    z-index: 5;
+  }
+.drag_text{
+    text-align: center;
+    font-size: 15pt;
+    text-decoration: underline;
+    font-style: italic;
+    margin-top: 130px;
+}
+.drag_div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+}
+.drag_img{
+    width: inherit;
+    z-index: 2;
+}
+
+.create_inp{
+    height: 20px;
+    background:#e9e9e9;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+.create_save{
+    font-size: 12pt;
+    margin-top: 15px;
+    width: 120px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: #1fc682;
+    cursor: pointer;
+}
+.create_save:hover{
+    background: #36b280;
+}
+.create_save:active{
+    background: #1a885c;
+}
+.create_save_div{
+    text-align: center;
+}
+.create_top{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.create_cancel{
+    color:#ff0000ba ;font-size: 30px ;
+    cursor: pointer;
+}
+.create_cancel:hover{
+    color: #d30d0dba;
+}
+.create_cancel:active{
+    color: #9b0c0c;
+}
+@media screen and (max-width: 540px) { 
+    .photo_place{
+        width: 300px;
+    }
+}
