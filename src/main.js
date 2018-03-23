@@ -1,5 +1,7 @@
 if (!localStorage.users)
     localStorage.users = JSON.stringify([{ Username: 'LALAL', Password: '15' }, { Username: 'Иванов Иван', Password: '1' }, { Username: 'Иванов Илья', Password: '1' }, { Username: 'ИИ', Password: '12' }]);
+if(!localStorage.user)
+    localStorage.user=JSON.stringify({ Username: '', Password: '' });
 var filterConfig = { author: '', createdAt: 0, hashTags: [] };
 let content = document.querySelector('.content');
 let App = document.querySelector('.App');
