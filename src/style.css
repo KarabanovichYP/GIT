@@ -29,6 +29,7 @@ p{
     background: #111;
     display: flex;
     justify-content: space-around;
+    z-index: 10;
 
 }
 .main{

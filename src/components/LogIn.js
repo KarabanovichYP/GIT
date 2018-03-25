@@ -45,15 +45,16 @@ function sign() {
     let user={};
     user.Username = sign_input_login.value;
     user.Password = sign_input_pass.value;
-    localStorage.user = JSON.stringify(user);
-    if (isValid(user))
+    if (isValid(user)){
+        localStorage.user = JSON.stringify(user);
         start();
+    }
     else
         wrongUser();
 }
-function isValid() {
+function isValid(user) {
     return JSON.parse(localStorage.users).find((el) => {
-        return el.Username === JSON.parse(localStorage.user).Username && el.Password === JSON.parse(localStorage.user).Password;
+        return el.Username === user.Username && el.Password === user.Password;
     }) ? true : false
 }
 function wrongUser() {
