@@ -1,15 +1,15 @@
 const http = require('http');
+const fs = require('fs');
+const staticBasePath = './public';
 
-http.createServer((request, response) => {
-    const { headers, method, url } = request;
-    let body = [];
-    request.on('error', (err) => {
-      console.error(err);
-    }).on('data', (chunk) => {
-      body.push(chunk);
-    }).on('end', () => {
-      body = Buffer.concat(body).toString();
-      // At this point, we have the headers, method, url and body, and can now
-      // do whatever we need to in order to respond to this request.
+const staticServe = function (req, res) {
+    const url = (req.url === '/') ? '/index.html' : req.url;
+    fs.readFile(staticBasePath + url, (err, data) => {
+        if (err)
+            res.end('error');
+        else
+            res.end(data);
     });
-  }).listen(8080);
+};
+const httpServer = http.createServer(staticServe);
+httpServer.listen(8080);

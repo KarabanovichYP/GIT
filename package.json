@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "start": "node app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/KarabanovichYP/GIT/issues"
   },
-  "homepage": "https://github.com/KarabanovichYP/GIT#readme"
+  "homepage": "https://github.com/KarabanovichYP/GIT#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
