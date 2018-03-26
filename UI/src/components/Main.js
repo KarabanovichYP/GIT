@@ -9,7 +9,7 @@ filters.innerHTML = `
   <input type="text" placeholder="Date(dd.mm.yyyy)" t="date">
 </div>
 <div class="filter">
-  <input type="text" placeholder="#hashtags" t="hashtag">
+  <input type="text" placeholder="#hashtag#hashtag" t="hashtag">
 </div>
 `
 let fltrs_username = filters.querySelector('input[t="name"]');

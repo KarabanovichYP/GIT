@@ -5,52 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-  <script src="PhotoPosts.js"></script>
-  <script src="Tests.js"></script>
-  <script src="DOM.js" defer></script>
+  <link href="src/style.css" rel="stylesheet">
+  <script src="src/PhotoPosts.js"></script>
+  <script src="src/Tests.js"></script>
+  <script src="src/DOM.js" defer></script>
+  <script src="src/components/Main.js" defer></script>
+  <script src="src/components/LogIn.js" defer></script>
+  <script src="src/components/CreateEdit.js" defer></script>
+  <script src="src/main.js" defer></script>
   <title>Inlike</title>
 </head>
 
 <body>
   <div class="App">
-    <div class="header">
-      <div class="fl">
-        <i class="cur ph material-icons " style="font-size:39px;">add_a_photo</i>
-      </div>
-      <div class="fl heart">
-        <div class="material-icons" style="color:red ;font-size: 40px ">favorite</div>
-      </div>
-      <div class="fl">
-        <div class="sign">
-          <div class="username roman" id="Username" style="color:#f4f4f4">Username</div>
-          <button class="signb cur">Sign out</button>
-        </div>
-      </div>
-    </div>
     <div class="main">
       <div class="content">
-        <div class="filters">
-          <div class="roman username flt">Filters</div>
-          <div class="filter">
-            <input type="checkbox" id="checkbox" class="check" />
-            <input type="text" placeholder="Username">
-          </div>
-          <div class="filter">
-            <input type="checkbox" value="Date" class="check">
-            <input type="text" placeholder="Date">
-          </div>
-          <div class="filter">
-            <input type="checkbox" value="Hashtag" class="check">
-            <input type="text" placeholder="#hashtag">
-          </div>
-        </div>
-        <div class="content_div">
-          <div class="posts"></div>
-          <div class="refresh">
-            <i class="material-icons refresh cur" style="font-size: 39px">refresh</i>
-          </div>
-        </div>
+        
       </div>
       <div class="footer roman">
         <p>Inlike photoportal</p>

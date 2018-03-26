@@ -42,8 +42,10 @@ change.innerHTML = 'Save';
 let create_wrong = document.createElement('div')
 create_wrong.className = 'sign_wrong sign_button_div';
 create_wrong.innerHTML = 'Choose Image!';
+create_description.placeholder = 'Description ...';
+create_hash.placeholder = '#hashtags'
 function delAll() {
-    while(create_div.firstChild)
+    while (create_div.firstChild)
         create_div.removeChild(create_div.firstChild);
     make = false;
     URL.revokeObjectURL(photo.src);
@@ -51,7 +53,7 @@ function delAll() {
     create_description.value = '';
     create_hash.value = '';
     photo_place.style.height = '350px';
-    hidden_input.value=null;
+    hidden_input.value = null;
 }
 function wrongImg() {
     create_div.insertBefore(create_wrong, create_div.childNodes[0]);
@@ -71,7 +73,7 @@ create_cancel.addEventListener('click', () => {
 })
 function savePh() {
     if (make) {
-        let lastID = localStorage.lastID ? localStorage.lastID : 0;
+        let lastID = localStorage.lastID;
         let ind = ph_src.search('fakepath');
         mainf(true, {
             id: `${lastID++}`,
@@ -118,8 +120,8 @@ save.addEventListener('click', savePh);
 change.addEventListener('click', editPh);
 create_div.addEventListener('keypress', (e) => {
     let key = e.which || e.keyCode;
-    if (key === 13){
-        if(save_div.lastChild===change)
+    if (key === 13) {
+        if (save_div.lastChild === change)
             editPh();
         else
             savePh();
@@ -147,8 +149,6 @@ function create() {
     if (s2.length == 1)
         s2 = '0' + s2;
     day.innerHTML = s1 + '.' + s2 + '.' + s3;
-    create_description.placeholder = 'Description ...';
-    create_hash.placeholder = '#hashtags'
     create_top.appendChild(username);
     create_top.appendChild(create_cancel);
     create_div.appendChild(create_top);
