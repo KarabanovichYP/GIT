@@ -1,0 +1,213 @@
+{
+	"id": "01407ad7-6c6b-4c5e-8e29-b0dd45d3537b",
+	"name": "postsActions",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"39e436f4-d7aa-4512-bd89-e00a3f7874df",
+		"7cdc62e3-fa07-46e5-9837-aeb5335f8918",
+		"093810db-fadb-45de-8996-62789061af3a",
+		"8ccb35bc-e861-4712-8bc3-17f9d9edebbc",
+		"43c5e98e-017d-426e-ba6e-da13b4994010",
+		"eeb2fccc-8bab-42ce-9513-82627fb4e1a3",
+		"d868fe7a-f082-4b4e-8e81-2ffb3502d629"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "093810db-fadb-45de-8996-62789061af3a",
+			"name": "localhost:3000/api/posts",
+			"url": "localhost:3000/api/posts",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\r\n        \"id\": \"8\",\r\n        \"description\": \"m\",\r\n        \"createdAt\": \"2000-11-16T17:12:00.000Z\",\r\n        \"author\": \"Иванов И\",\r\n        \"photoLink\": \"pics/kosmos.jpg\",\r\n        \"likes\": [\r\n            \"petya\"\r\n        ],\r\n        \"hashTags\": [\r\n            \"ads\",\r\n            \"dsa\"\r\n        ]\r\n    }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "39e436f4-d7aa-4512-bd89-e00a3f7874df",
+			"name": "localhost:3000/api/posts/all",
+			"url": "localhost:3000/api/posts/all",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"top\":\"3\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "43c5e98e-017d-426e-ba6e-da13b4994010",
+			"name": "localhost:3000/api/posts?id=4",
+			"url": "localhost:3000/api/posts?id=4",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "4",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7cdc62e3-fa07-46e5-9837-aeb5335f8918",
+			"name": "localhost:3000/api/posts?id=4",
+			"url": "localhost:3000/api/posts?id=4",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "4",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"top\":\"2\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8ccb35bc-e861-4712-8bc3-17f9d9edebbc",
+			"name": "localhost:3000/api/posts?id=2",
+			"url": "localhost:3000/api/posts?id=2",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\r\n        \r\n        \"description\": \"mpppp\",\r\n        \"hashTags\": [\r\n            \"llalallala\",\r\n            \"oooooooooooo\"\r\n        ]\r\n    }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d868fe7a-f082-4b4e-8e81-2ffb3502d629",
+			"name": "localhost:3000/api/likes",
+			"url": "localhost:3000/api/likes",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"name\":\"egor\",\n\t\"id\":\"1\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "eeb2fccc-8bab-42ce-9513-82627fb4e1a3",
+			"name": "localhost:3000/api/likes",
+			"url": "localhost:3000/api/likes",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"add\":\"yes\",\n\t\"name\":\"egor\",\n\t\"id\":\"1\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}
