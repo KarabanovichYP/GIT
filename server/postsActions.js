@@ -1,9 +1,10 @@
 const fs = require('fs');
 const postsPath = './server/data/posts.json';
+const lastId = './server/data/lastId.json';
 const postsActions = {
     getPhotoPosts: function (skip = 0, top = 10, filterConfig) {
         let res = fs.readFileSync(postsPath);
-        if (res)
+        try {
             return JSON.parse(res)
                 .filter((elem) => {
                     if (filterConfig) {
@@ -12,6 +13,9 @@ const postsActions = {
                         if (filterConfig.createdAt) {
                             if (typeof elem.createdAt === 'string') {
                                 elem.createdAt = new Date(elem.createdAt);
+                            }
+                            if (typeof filterConfig.createdAt === 'string') {
+                                filterConfig.createdAt = new Date(filterConfig.createdAt);
                             }
                             let d1 = elem.createdAt;
                             let d2 = filterConfig.createdAt;
@@ -32,6 +36,10 @@ const postsActions = {
                     return true;
                 })
                 .slice(skip, skip + top);
+        }
+        catch (err) {
+            return null;
+        }
     },
     getPhotoPost: function (id) {
         let res = fs.readFileSync(postsPath);
@@ -47,15 +55,19 @@ const postsActions = {
             typeof photoPost.description === "string" && photoPost.description.length < 200 && photoPost.createdAt instanceof Date &&
             typeof photoPost.author === "string" && photoPost.author.length > 0 && typeof photoPost.photoLink === "string" && photoPost.photoLink.length > 0);
     },
-    addPhotoPost: function (photoPost) {
+    addPhotoPost: function (Post) {
+        let ID = JSON.parse(fs.readFileSync(lastId)).ID;
+        let photoPost={id:`${ID}`};
+        Object.assign(photoPost,Post);
         if (typeof photoPost.createdAt === 'string') {
             photoPost.createdAt = new Date(photoPost.createdAt);
         }
-        if (this.validatePhotoPost(photoPost) && !this.getPhotoPost(photoPost.id)) {
-            let photoPosts = [];
+        if (this.validatePhotoPost(photoPost)) {
+            let photoPosts;
             let res = fs.readFileSync(postsPath);
-            if (res)
-                photoPosts = JSON.parse(res);
+            photoPosts = this.getPhotoPosts(0,ID);
+            if(!photoPosts)
+                photoPosts=[];
             photoPosts.push(photoPost);
             photoPosts.sort((a, b) => {
                 if (typeof a.createdAt === 'string') {
@@ -67,6 +79,8 @@ const postsActions = {
                 return b.createdAt - a.createdAt;
             });
             fs.writeFileSync(postsPath, JSON.stringify(photoPosts));
+            ID++;
+            fs.writeFileSync(lastId, JSON.stringify({ ID: ID }));
             return true;
         }
         return false;

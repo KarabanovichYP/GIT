@@ -1,5 +1,6 @@
 var currentDate;
 var make = false;
+let image;
 let ph_src;
 let ph_id;
 let create_div = document.createElement('div');
@@ -60,6 +61,7 @@ function wrongImg() {
 }
 hidden_input.addEventListener('change', (e) => {
     if (e.target.files[0]) {
+        image = e.target.files[0];
         photo.src = URL.createObjectURL(e.target.files[0]);
         ph_src = hidden_input.value;
         make = true;
@@ -73,19 +75,17 @@ create_cancel.addEventListener('click', () => {
 })
 function savePh() {
     if (make) {
-        let lastID = localStorage.lastID;
-        let ind = ph_src.search('fakepath');
-        mainf(true, {
-            id: `${lastID++}`,
-            description: create_description.value,
-            createdAt: currentDate,
-            author: JSON.parse(localStorage.user).Username,
-            photoLink: `pics\\${ph_src.slice(ind + 9)}`,
-            hashTags: create_hash.value.split('#').slice(1),
-            likes: []
-        });
-        delAll();
-        localStorage.lastID = lastID;
+        if (sendImage()) {
+            mainf(true, {
+                description: create_description.value,
+                createdAt: currentDate,
+                author: username.innerHTML,
+                photoLink: ph_src,
+                hashTags: create_hash.value.split('#').slice(1),
+                likes: []
+            });
+            delAll();
+        }
     }
     else
         wrongImg();
@@ -93,23 +93,24 @@ function savePh() {
 function editPh() {
     id = ph_id;
     if (make) {
-        let ind = ph_src.search('fakepath');
-        mainf(false, {
-            id: `${id}`,
-            description: create_description.value ? create_description.value : ' ',
-            createdAt: currentDate,
-            author: JSON.parse(localStorage.user).Username,
-            photoLink: `pics\\${ph_src.slice(ind + 9)}`,
-            hashTags: create_hash.value.split('#').slice(1),
-        }, true);
-        delAll();
+        if (sendImage()) {
+            mainf(false, {
+                id: `${id}`,
+                description: create_description.value ? create_description.value : ' ',
+                createdAt: currentDate,
+                author: username.innerHTML,
+                photoLink: ph_src,
+                hashTags: create_hash.value.split('#').slice(1),
+            }, true);
+            delAll();
+        }
     }
     else {
         mainf(false, {
             id: `${id}`,
             description: create_description.value ? create_description.value : ' ',
             createdAt: currentDate,
-            author: JSON.parse(localStorage.user).Username,
+            author: username.innerHTML,
             photoLink: ph_src,
             hashTags: create_hash.value.split('#').slice(1),
         }, true);
@@ -128,10 +129,22 @@ create_div.addEventListener('keypress', (e) => {
         e.preventDefault();
     }
 })
+function sendImage() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', `/api/images`, false);
+    var formData = new FormData();
+    formData.append("img", image);
+    xhr.send(formData);
+    if (xhr.response) {
+        ph_src = xhr.response;
+        return true;
+    }
+    return false;
+}
 function create() {
     while (content.firstChild)
         content.removeChild(content.firstChild);
-    username.innerHTML = JSON.parse(localStorage.user).Username;
+    username.innerHTML = JSON.parse(localStorage.User);
     currentDate = new Date();
     let s1, s2, s3;
     s1 = '' + currentDate.getHours();
@@ -171,7 +184,7 @@ function edit(post) {
     photo.src = post.photoLink;
     ph_src = post.photoLink;
     photo_place.style.height = 'auto';
-    username.innerHTML = JSON.parse(localStorage.user).Username;
+    username.innerHTML = JSON.parse(localStorage.User);
     currentDate = post.createdAt;
     if (typeof currentDate === 'string') {
         currentDate = new Date(currentDate);

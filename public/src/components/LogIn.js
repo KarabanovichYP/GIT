@@ -46,23 +46,32 @@ function sign() {
     user.Username = sign_input_login.value;
     user.Password = sign_input_pass.value;
     if (isValid(user)){
-        localStorage.user = JSON.stringify(user);
+        localStorage.User = JSON.stringify(user.Username);
         start();
     }
     else
         wrongUser();
 }
 function isValid(user) {
-    return JSON.parse(localStorage.users).find((el) => {
-        return el.Username === user.Username && el.Password === user.Password;
-    }) ? true : false
+    let body = JSON.stringify({
+        Username:user.Username,
+        Password:user.Password
+      });
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', '/api/users', false);
+      xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+      xhr.send(body);
+      if (xhr.status == 200&&JSON.parse(xhr.response))
+        return true;
+      else
+        return false;
 }
 function wrongUser() {
     sign_pg.insertBefore(sign_wrong, sign_form);
 }
 
 function LogIn() {
-    localStorage.user=JSON.stringify({Username:'',Password:''});
+    localStorage.User=JSON.stringify(null);
     if (App.firstChild.className === 'header');
     App.removeChild(App.firstChild);
     while (content.firstChild)

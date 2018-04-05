@@ -222,8 +222,6 @@ img,.post{
         background: #111;
         height: 75px;
         top: 60px;
-        border-bottom-left-radius: 15px; 
-        border-bottom-right-radius: 15px; 
 
     } 
     input,input[type="text"]{
@@ -358,6 +356,7 @@ img,.post{
 .create_save{
     font-size: 12pt;
     margin-top: 15px;
+    margin-bottom: 15px;
     width: 120px;
     height: 30px;
     color: white;

@@ -54,7 +54,7 @@ function start() {
         content.removeChild(content.firstChild);
     content.appendChild(filters);
     content.appendChild(content_div);
-    newUser(JSON.parse(localStorage.user).Username);
+    newUser(JSON.parse(localStorage.User));
     sign_input_login.value = '';
     sign_input_pass.value = '';
 }

@@ -220,18 +220,3 @@ function delLike(id, user) {
   if (Posts.delLike(id, user))
     Dom.delLike(id);
 }
-
-/*
-var post1 = {
-  id: '12',
-  description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-  createdAt: new Date('2018-02-23T23:00:00'),
-  author: 'Иванов Иваннннн',
-  photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-  hashTags: ['победа'],
-  likes: ['Иван Петров', 'Юра Иванов']
-};
-addPhotoPost(post1);
-removePhotoPost('2');
-editPhotoPost('3', { description: "COOOOL", hashTags: ["aww", "nice", "yeah"] });
-*/

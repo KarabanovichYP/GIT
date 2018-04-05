@@ -1,58 +1,6 @@
-if (!localStorage.users)
-    localStorage.users = JSON.stringify([{ Username: 'LALAL', Password: '15' }, { Username: 'Иванов Иван', Password: '1' }, { Username: 'Иванов Илья', Password: '1' }, { Username: 'ИИ', Password: '12' }]);
-if (!localStorage.user)
-    localStorage.user = JSON.stringify({ Username: '', Password: '' });
-if (!localStorage.photoPosts)
-    localStorage.photoPosts = JSON.stringify([
-        {
-            id: '1',
-            description: 'Женская сборная Беларуси выиграла эстафету в рамках соревнований по биатлону на Олимпийских играх в Пхёнчхане!!!',
-            createdAt: new Date('2018-02-23T23:00:00'),
-            author: 'Иванов Иван',
-            photoLink: 'pics/5.jpg',
-            likes:[],
-            hashTags:['ads','dsa']
-        },
-        {
-            id: '2',
-            description: 'Mountains',
-            createdAt: new Date('2018-02-24T23:00:00'),
-            author: 'Иванов Илья',
-            photoLink: 'pics/kosmos.jpg',
-            likes:[],
-            hashTags:['ads','dsa']
-        },
-        {
-            id: '3',
-            description: 'My photo',
-            createdAt: new Date('2018-02-24T23:20:00'),
-            author: 'Иванов Илья',
-            photoLink: 'pics/5.jpg',
-            likes:[],
-            hashTags:['ads','ww']
-        },
-        {
-            id: '4',
-            description: 'new ph',
-            createdAt: new Date('2018-02-25T23:00:00'),
-            author: 'ИИ',
-            photoLink: 'pics/5.jpg',
-            likes:[],
-            hashTags:['qq','eee']
-        },
-        {
-            id: '5',
-            description: '',
-            createdAt: new Date('2018-02-26T23:00:00'),
-            author: 'Иванов Иван',
-            photoLink: 'pics/kosmos.jpg',
-            likes:[],
-            hashTags:['ads','dsa']
-        },
-    ]);
-if(!localStorage.lastID)
-    localStorage.lastID=6;
-var filterConfig = { author: '', createdAt: 0, hashTags: [] };
+if (!localStorage.User)
+    localStorage.User = JSON.stringify(null);
+let filterConfig = { author: '', createdAt: 0, hashTags: [] };
 let content = document.querySelector('.content');
 let App = document.querySelector('.App');
 let main = document.querySelector('.main');
@@ -89,7 +37,7 @@ header_button.addEventListener('click', () => {
     LogIn();
 })
 create_button.addEventListener('click', () => {
-    if (JSON.parse(localStorage.user).Username) {
+    if (JSON.parse(localStorage.User)) {
         create();
     }
     else
@@ -106,11 +54,11 @@ function refr() {
 posts.addEventListener('click', (e) => {
     if (e.target.innerHTML === 'favorite_border') {
         let id = e.target.parentNode.parentNode.parentNode.parentNode.id;
-        addLike(id, JSON.parse(localStorage.user).Username);
+        addLike(id, JSON.parse(localStorage.User));
     }
     else if (e.target.innerHTML === 'favorite') {
         let id = e.target.parentNode.parentNode.parentNode.parentNode.id;
-        delLike(id, JSON.parse(localStorage.user).Username);
+        delLike(id, JSON.parse(localStorage.User));
     }
     else if (e.target.innerHTML === 'delete_forever') {
         let id = e.target.parentNode.parentNode.parentNode.id;
@@ -120,9 +68,5 @@ posts.addEventListener('click', (e) => {
         let id = e.target.parentNode.parentNode.parentNode.id;
         edit(Posts.getPhotoPost(id));
     }
-
 })
-
-
-
 start();
